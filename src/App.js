@@ -5,7 +5,7 @@ import ModalWindow from "./components/ModalWindow";
 
 function App() {
   const [itemsList, setItemsList] = useState([]);
-  const [hasFlag, setHasFlag] = useState(false);
+  const [hasModalOpen, setHasModalOpen] = useState(false);
 
   useEffect(() => {
     data.getData().then((data) => {
@@ -19,7 +19,7 @@ function App() {
     }
   };
   const showModalWindow = () => {
-    setHasFlag(hasFlag ? false : true);
+    setHasModalOpen(hasModalOpen ? false : true);
   };
 
   return (
@@ -28,7 +28,7 @@ function App() {
       <div onClick={showModalWindow}>
         <p>Add new section</p>
       </div>
-      {hasFlag ? <ModalWindow getValueForNewSections={getValueForNewSections} /> : null}
+      {hasModalOpen ? <ModalWindow getValueForNewSections={getValueForNewSections} /> : null}
     </div>
   );
 }
