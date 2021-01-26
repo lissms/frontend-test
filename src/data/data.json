@@ -1,0 +1,10 @@
+{
+    "response": [{
+        "title": "Buscador inteligente",
+        "text": "Mejore las búsquedas con nuestras tecnologías semánticas..."
+    },  
+    {
+        "title": "Recomendador de Conceptos",
+        "text": "Identifica automáticamente entidades, etiquetas, relaciones y conceptos de sus contenidos..."
+    }]
+    }
