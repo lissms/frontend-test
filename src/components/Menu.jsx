@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 function Menu(props) {
   const Items = props.itemsList.map((item, index) => {
     return (
-      <li key={item.index}>
-        <MenuItems title={item.title} text={item.text} />
+      <li key={index}>
+        <MenuItems title={item.title} text={item.text} id={index} />
       </li>
     );
   });

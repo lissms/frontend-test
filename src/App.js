@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import data from "./service/getData";
 import Menu from "./components/Menu";
 import ModalWindow from "./components/ModalWindow";
+import { Btn } from "./app.styled";
 
 function App() {
   const [itemsList, setItemsList] = useState([]);
@@ -14,9 +15,7 @@ function App() {
   }, []);
 
   const getValueForNewSections = (objet) => {
-    if (objet !== "") {
-      setItemsList([...itemsList, objet]);
-    }
+    setItemsList([...itemsList, objet]);
   };
   const showModalWindow = () => {
     setHasModalOpen(hasModalOpen ? false : true);
@@ -25,10 +24,12 @@ function App() {
   return (
     <div className="App">
       <Menu itemsList={itemsList} />
-      <div onClick={showModalWindow}>
+      <Btn onClick={showModalWindow}>
         <p>Add new section</p>
-      </div>
-      {hasModalOpen ? <ModalWindow getValueForNewSections={getValueForNewSections} /> : null}
+      </Btn>
+      {hasModalOpen ? (
+        <ModalWindow setHasModalOpen={setHasModalOpen} getValueForNewSections={getValueForNewSections} />
+      ) : null}
     </div>
   );
 }

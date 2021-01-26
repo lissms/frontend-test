@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { Modal, InputTitle, Textarea, InputSubmit, Close } from "./modalWindow.styled";
 import PropTypes from "prop-types";
 
 function ModalWindow(props) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+
+  const handleFormSubmit = (ev) => {
+    ev.preventDefault();
+  };
 
   const handlerInputValueTitle = (ev) => {
     setTitle(ev.target.value);
@@ -15,10 +20,17 @@ function ModalWindow(props) {
     props.getValueForNewSections({ title: title, text: text });
   };
 
+  const CloseModalWindow = () => {
+    props.setHasModalOpen(false);
+  };
+
   return (
-    <div>
-      <form>
-        <input
+    <Modal>
+      <Close onClick={CloseModalWindow}>
+        <p>X</p>
+      </Close>
+      <form onSubmit={handleFormSubmit}>
+        <InputTitle
           onChange={handlerInputValueTitle}
           type="text"
           name="title"
@@ -27,7 +39,7 @@ function ModalWindow(props) {
           value={title}
           required
         />
-        <textarea
+        <Textarea
           onChange={handlerInputValueText}
           name="text"
           id="text"
@@ -37,10 +49,9 @@ function ModalWindow(props) {
           value={text}
           required
         />
-
-        <input type="button" value="submitted" onClick={handleClick} />
+        <InputSubmit type="submit" value="submitted" onClick={handleClick} disabled={text === "" || title === ""} />
       </form>
-    </div>
+    </Modal>
   );
 }
 
