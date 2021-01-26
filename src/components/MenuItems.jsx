@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function MenuItems(props) {
   return (
     <div>
-      <h1>{props.title}</h1>
+      <h3>{props.title}</h3>
       <p>{props.text}</p>
     </div>
   );
