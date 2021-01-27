@@ -15,6 +15,15 @@ export const Text = styled.p`
   color: gray;
   padding: 16px;
 `;
+export const TextContainer = styled.div`
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  height: 70px;
+  height: ${(props) => (props.hasFlag ? `70px;` : ` 1px;`)};
+  transition: height ease 0.5s;
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
