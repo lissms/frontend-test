@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MenuSections = styled.div`
   width: 60%;
-  margin: 20px;
+  margin: 0 20px;
   & .menu-sections {
     border-bottom: solid 2px rgb(224, 224, 224);
   }

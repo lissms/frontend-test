@@ -13,10 +13,12 @@ function ModalWindow(props) {
   const handlerInputValueTitle = (ev) => {
     setTitle(ev.target.value);
   };
-  const handlerInputValueText = (event) => {
-    setText(event.target.value);
+
+  const handlerInputValueText = (ev) => {
+    setText(ev.target.value);
   };
-  const handleClick = (ev) => {
+
+  const handleClick = () => {
     props.getValueForNewSections({ title: title, text: text });
     props.setHasModalOpen(false);
   };
@@ -69,6 +71,9 @@ function ModalWindow(props) {
   );
 }
 
-ModalWindow.propTypes = {};
+ModalWindow.propTypes = {
+  getValueForNewSections: PropTypes.function,
+  setHasModalOpen: PropTypes.function,
+};
 
 export default ModalWindow;

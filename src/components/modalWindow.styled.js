@@ -6,7 +6,7 @@ export const Modal = styled.div`
   justify-content: center;
   position: absolute;
   top: 0;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 43, 69, 0.8);
 
@@ -16,12 +16,14 @@ export const Modal = styled.div`
     align-items: center;
     justify-content: center;
   }
+
   & .modal-container {
     background-color: rgb(224, 224, 224);
-    width: 70%;
+    width: 50%;
     border-radius: 8px;
     padding: 32px;
   }
+
   & .title-modal {
     display: flex;
     justify-content: space-between;
@@ -29,6 +31,7 @@ export const Modal = styled.div`
     margin-bottom: 20px;
   }
 `;
+
 export const InputTitle = styled.input`
   width: 100%;
   height: 48px;
@@ -41,12 +44,15 @@ export const InputTitle = styled.input`
   &::-webkit-input-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &:-moz-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &::-moz-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &:-ms-input-placeholder {
     color: rgb(91, 141, 207);
   }
@@ -54,26 +60,29 @@ export const InputTitle = styled.input`
 export const Textarea = styled.textarea`
   width: 100%;
   height: 60%;
-
   border: 2px solid rgb(224, 224, 224);
   box-sizing: border-box;
   border-radius: 4px;
-
   padding: 15px;
   margin-bottom: 12px;
+
   &::-webkit-input-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &:-moz-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &::-moz-placeholder {
     color: rgb(91, 141, 207);
   }
+
   &:-ms-input-placeholder {
     color: rgb(91, 141, 207);
   }
 `;
+
 export const InputSubmit = styled.input`
   border: none;
   -webkit-appearance: none;
@@ -96,6 +105,7 @@ export const InputSubmit = styled.input`
     transform: scale(1.05);
   }
 `;
+
 export const Close = styled.div`
   display: flex;
   align-items: center;
@@ -104,8 +114,8 @@ export const Close = styled.div`
   height: 24px;
   background-color: white;
   border-radius: 200px;
-
   cursor: pointer;
+
   & p {
     font-size: 15px;
     color: rgb(91, 141, 207);

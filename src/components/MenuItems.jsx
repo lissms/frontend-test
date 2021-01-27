@@ -5,16 +5,16 @@ import { Title, Text, ArrowBtn, TitleContainer, MenuSections, TextContainer } fr
 function MenuItems(props) {
   const [hasFlag, setHasFlag] = useState(false);
 
-  const handlerOpenText = (ev) => {
+  const handlerOpenText = () => {
     setHasFlag(hasFlag ? false : true);
-    console.log("çv.target.id", ev.currentTarget.id);
   };
+
   return (
     <MenuSections>
       <div className="menu-sections">
         <TitleContainer>
           <Title>{props.title}</Title>
-          <ArrowBtn onClick={handlerOpenText} id={props.id} hasFlag={hasFlag}>
+          <ArrowBtn onClick={handlerOpenText} hasFlag={hasFlag}>
             <div className="arrow"></div>
             <div className="arrow-bottom"></div>
           </ArrowBtn>
@@ -27,6 +27,9 @@ function MenuItems(props) {
   );
 }
 
-MenuItems.propTypes = {};
+MenuItems.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+};
 
 export default MenuItems;

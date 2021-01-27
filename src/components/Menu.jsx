@@ -6,7 +6,7 @@ function Menu(props) {
   const Items = props.itemsList.map((item, index) => {
     return (
       <li key={index}>
-        <MenuItems title={item.title} text={item.text} id={index} />
+        <MenuItems title={item.title} text={item.text} />
       </li>
     );
   });
@@ -14,6 +14,8 @@ function Menu(props) {
   return <ul>{Items}</ul>;
 }
 
-Menu.propTypes = {};
+Menu.propTypes = {
+  itemsList: PropTypes.array,
+};
 
 export default Menu;
