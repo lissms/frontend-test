@@ -23,10 +23,9 @@ function App() {
 
   return (
     <div className="App">
+      <Btn onClick={showModalWindow}>Add new section</Btn>
       <Menu itemsList={itemsList} />
-      <Btn onClick={showModalWindow}>
-        <p>Add new section</p>
-      </Btn>
+
       {hasModalOpen ? (
         <ModalWindow setHasModalOpen={setHasModalOpen} getValueForNewSections={getValueForNewSections} />
       ) : null}

@@ -4,11 +4,11 @@ export const MenuSections = styled.div`
   width: 60%;
   margin: 20px;
   & .menu-sections {
-    border-bottom: solid 2px gray;
+    border-bottom: solid 2px rgb(224, 224, 224);
   }
 `;
 export const Title = styled.h3`
-  color: blue;
+  color: rgb(91, 141, 207);
   padding: 16px;
 `;
 export const Text = styled.p`
@@ -43,7 +43,7 @@ export const ArrowBtn = styled.div`
   & .arrow {
     width: 10px;
     height: 3px;
-    background: blue;
+    background: rgb(91, 141, 207);
     transform-origin: left;
     transform: ${(props) => (props.hasFlag ? `rotate(45deg) translateY(-5px);` : `rotate(-45deg) translateY(5px);`)};
     transition: transform ease 0.5s;
@@ -51,7 +51,7 @@ export const ArrowBtn = styled.div`
   & .arrow-bottom {
     width: 10px;
     height: 3px;
-    background: blue;
+    background: rgb(91, 141, 207);
     transform-origin: right;
     transform: ${(props) => (props.hasFlag ? `rotate(-45deg) translateY(-5px);` : `rotate(45deg) translateY(5px);`)};
     transition: transform ease 0.5s;
