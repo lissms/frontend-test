@@ -72,8 +72,8 @@ function ModalWindow(props) {
 }
 
 ModalWindow.propTypes = {
-  getValueForNewSections: PropTypes.function,
-  setHasModalOpen: PropTypes.function,
+  getValueForNewSections: PropTypes.func,
+  setHasModalOpen: PropTypes.func,
 };
 
 export default ModalWindow;
