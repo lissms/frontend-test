@@ -18,6 +18,7 @@ function ModalWindow(props) {
   };
   const handleClick = (ev) => {
     props.getValueForNewSections({ title: title, text: text });
+    props.setHasModalOpen(false);
   };
 
   const CloseModalWindow = () => {
@@ -26,31 +27,44 @@ function ModalWindow(props) {
 
   return (
     <Modal>
-      <Close onClick={CloseModalWindow}>
-        <p>X</p>
-      </Close>
-      <form onSubmit={handleFormSubmit}>
-        <InputTitle
-          onChange={handlerInputValueTitle}
-          type="text"
-          name="title"
-          id="title"
-          placeholder="add new title"
-          value={title}
-          required
-        />
-        <Textarea
-          onChange={handlerInputValueText}
-          name="text"
-          id="text"
-          cols="30"
-          rows="10"
-          placeholder="add a text"
-          value={text}
-          required
-        />
-        <InputSubmit type="submit" value="submitted" onClick={handleClick} disabled={text === "" || title === ""} />
-      </form>
+      <div className="modal-container">
+        <div className="title-modal">
+          <h2>Add New Sections</h2>
+
+          <Close onClick={CloseModalWindow}>
+            <p>X</p>
+          </Close>
+        </div>
+        <form onSubmit={handleFormSubmit}>
+          <InputTitle
+            onChange={handlerInputValueTitle}
+            type="text"
+            name="title"
+            id="title"
+            placeholder="add new title"
+            value={title}
+            required
+          />
+          <Textarea
+            onChange={handlerInputValueText}
+            name="text"
+            id="text"
+            cols="30"
+            rows="10"
+            placeholder="add a text"
+            value={text}
+            required
+          />
+          <InputSubmit
+            type="submit"
+            value="save"
+            text={text}
+            title={title}
+            onClick={handleClick}
+            disabled={text === "" || title === ""}
+          />
+        </form>
+      </div>
     </Modal>
   );
 }
